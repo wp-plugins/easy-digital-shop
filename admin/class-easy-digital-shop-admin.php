@@ -220,11 +220,14 @@ class Easy_Digital_Shop_Admin {
         ob_start();
 
         if (!empty($price) AND ! empty($currency) AND count($this->eds_glob(EDS_DIR . "/post" . $post->ID . "_*")) AND ! empty($email)) {
-            echo "<form action='" . (empty($use_sandbox) ? "https://www.paypal.com/cgi-bin/webscr" : "https://www.sandbox.paypal.com/cgi-bin/webscr") . "' method='post' target='_blank'>";
-            $price = sprintf("%01.2f", $price);
+		
+			$price = sprintf("%01.2f", $price);
 
-            echo '<p>';
-            echo $currency . $price . ' / Download<br />';
+           
+			
+            echo "<form action='" . (empty($use_sandbox) ? "https://www.paypal.com/cgi-bin/webscr" : "https://www.sandbox.paypal.com/cgi-bin/webscr") . "' method='post' target='_blank'>";
+             echo '<p>';
+            echo self::get_eds_symbol($currency) . $price . ' <br />';
             echo '<input type="image" src="https://www.paypal.com/en_GB/i/btn/btn_buynow_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online.">';
             echo '</p>';
             echo '<input type="hidden" name="cmd" value="_xclick" />';
