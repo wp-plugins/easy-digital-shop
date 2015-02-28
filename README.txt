@@ -37,10 +37,10 @@ In the search field type "Easy Digital Shop" and click Search Plugins. Once you'
 
 == Screenshots ==
 
-1. Sales Page, where yo can track your sales.
-2. Settings Page.
-3. Upload/edit fields.
-4. A customized button.
+1. PayPal and confirmation email setting.
+2. Add Product.
+3. Display product.
+4. Order Listing.
 
 == Frequently Asked Questions ==
 
