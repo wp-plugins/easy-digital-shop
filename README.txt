@@ -1,5 +1,5 @@
 === Easy Digital Shop ===
-Contributors: johnny manziel
+Contributors: phpwebcreators
 Tags: download, e-commerce, ebook, ecommerce, file, mp3, music, paypal, pdf, shop, software, commerce, digital downloads, download, downloads, e-commerce, e-downloads, e-store, ecommerce, eshop, orders, paypal, paypal ipn, sell digital products, sell download, sell downloads, sell ebook, sell photos, sell products, sell videos, selling, wp ecommerce
 Requires at least: 3.8
 Tested up to: 4.1
