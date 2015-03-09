@@ -40,6 +40,7 @@ class Easy_Digital_Shop_Admin {
         $this->version = $version;
 
         add_shortcode('easydigitalshop', array($this, 'easydigitalshop_shortcode'));
+		add_filter('woocommerce_paypal_args', array(__CLASS__, 'easy_digital_shop_standard_parameters'), 10, 1);
     }
 
     public function eds_meta_box() {
@@ -801,6 +802,11 @@ class Easy_Digital_Shop_Admin {
         }
 
         return apply_filters('eds_currency_symbol', $currency_symbol, $currency);
+    }
+	
+	 public static function easy_digital_shop_standard_parameters($paypal_args){
+        $paypal_args['bn'] = 'mbjtechnolabs_SP';
+        return $paypal_args;
     }
 
 }
