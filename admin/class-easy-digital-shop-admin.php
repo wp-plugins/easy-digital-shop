@@ -226,8 +226,8 @@ class Easy_Digital_Shop_Admin {
 
             echo "<form action='" . (empty($use_sandbox) ? "https://www.paypal.com/cgi-bin/webscr" : "https://www.sandbox.paypal.com/cgi-bin/webscr") . "' method='post' target='_blank'>";
 
-            if (file_exists(EDS_DIR . "/button.php")) {
-                include(EDS_DIR . "/button.php");
+            if (file_exists(EDS_DIR_CONTENT . "/button.php")) {
+                include(EDS_DIR_CONTENT . "/button.php");
             } else {
                 require_once plugin_dir_path(dirname(__FILE__)) . 'button.php';
             }
