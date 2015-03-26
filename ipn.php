@@ -121,6 +121,7 @@ if ($fp) {
 
                 $mail_Body = str_replace($search, $replace, get_option('eds_emailtext'));
                 wp_mail($payer_email, $mail_Subject, $mail_Body, $mail_From);
+                wp_mail(get_option('efs_paypal_email'), $mail_Subject, $mail_Body, $mail_From);
             }
         } elseif (strcmp($res, "INVALID") == 0) {
 
