@@ -40,7 +40,7 @@ class Easy_Digital_Shop_Admin {
         $this->version = $version;
 
         add_shortcode('easydigitalshop', array($this, 'easydigitalshop_shortcode'));
-		add_filter('woocommerce_paypal_args', array(__CLASS__, 'easy_digital_shop_standard_parameters'), 10, 1);
+        add_filter('woocommerce_paypal_args', array(__CLASS__, 'easy_digital_shop_standard_parameters'), 10, 1);
     }
 
     public function eds_meta_box() {
@@ -87,8 +87,8 @@ class Easy_Digital_Shop_Admin {
             document.getElementById("post").setAttribute("enctype", "multipart/form-data");
             document.getElementById('post').setAttribute('encoding', 'multipart/form-data');
 
-            jQuery(document).ready(function () {
-                jQuery('#eds_deletelink').click(function (e) {
+            jQuery(document).ready(function() {
+                jQuery('#eds_deletelink').click(function(e) {
                     e.preventDefault();
                     jQuery('#eds_delete').val(1);
                     jQuery('#post').submit();
@@ -201,7 +201,7 @@ class Easy_Digital_Shop_Admin {
 
         extract(shortcode_atts(array('id' => null), $atts));
 
-        if (is_null($id) AND ! is_null($post)) {
+        if (is_null($id) AND !is_null($post)) {
             return $this->easydigitalshop_output($post->ID);
         } elseif (!is_null($id)) {
             return $this->easydigitalshop_output($id);
@@ -220,18 +220,20 @@ class Easy_Digital_Shop_Admin {
 
         ob_start();
 
-        if (!empty($price) AND ! empty($currency) AND count($this->eds_glob(EDS_DIR . "/post" . $post->ID . "_*")) AND ! empty($email)) {
-		
-			$price = sprintf("%01.2f", $price);
+        if (!empty($price) AND !empty($currency) AND count($this->eds_glob(EDS_DIR . "/post" . $post->ID . "_*")) AND !empty($email)) {
 
-           
-			
+            $price = sprintf("%01.2f", $price);
+
             echo "<form action='" . (empty($use_sandbox) ? "https://www.paypal.com/cgi-bin/webscr" : "https://www.sandbox.paypal.com/cgi-bin/webscr") . "' method='post' target='_blank'>";
-             echo '<p>';
-            echo self::get_eds_symbol($currency) . $price . ' <br />';
-            echo '<input type="image" src="https://www.paypal.com/en_GB/i/btn/btn_buynow_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online.">';
-            echo '</p>';
+
+            if (file_exists(EDS_DIR . "/button.php")) {
+                include(EDS_DIR . "/button.php");
+            } else {
+                require_once plugin_dir_path(dirname(__FILE__)) . 'button.php';
+            }
+
             echo '<input type="hidden" name="cmd" value="_xclick" />';
+            echo '<input name="bn" value="mbjtechnolabs_SP" type="hidden" />';
             echo "<input type='hidden' name='business' value='$email' />";
             echo "<input type='hidden' name='item_name' value='" . esc_attr($post->post_title) . "' />";
             echo "<input type='hidden' name='item_number' value='$post->ID' />";
@@ -803,8 +805,8 @@ class Easy_Digital_Shop_Admin {
 
         return apply_filters('eds_currency_symbol', $currency_symbol, $currency);
     }
-	
-	 public static function easy_digital_shop_standard_parameters($paypal_args){
+
+    public static function easy_digital_shop_standard_parameters($paypal_args) {
         $paypal_args['bn'] = 'mbjtechnolabs_SP';
         return $paypal_args;
     }

@@ -19,6 +19,8 @@ if (!defined('WPINC')) {
     die;
 }
 
+ define("EDS_DIR", WP_CONTENT_DIR . "/easyfileshop");
+ 
 if (!defined('EDS_FILE_PERMISSIONS')) {
     define('EDS_FILE_PERMISSIONS', 0666);
 }
