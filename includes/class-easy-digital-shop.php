@@ -49,7 +49,7 @@ class Easy_Digital_Shop {
     public function __construct() {
 
         $this->plugin_name = 'easy-digital-shop';
-        $this->version = '1.0.2';
+        $this->version = '1.0.3';
 
         $this->load_dependencies();
         $this->set_locale();
@@ -126,6 +126,7 @@ class Easy_Digital_Shop {
         $this->loader->add_action('save_post', $plugin_admin, 'eds_save_meta', 100, 2);
         $this->loader->add_action('admin_init', $plugin_admin, 'eds_register_mysettings');
         $this->loader->add_action('admin_menu', $plugin_admin, 'eds_add_pages');
+        
     }
 
     /**

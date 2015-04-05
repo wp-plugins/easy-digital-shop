@@ -6,7 +6,7 @@
  * Plugin Name:       PayPal Easy Digital Shop
  * Plugin URI:        http://webs-spider.com/
  * Description:       Easy Digital Shop plugin for selling digital downloads via PayPal payment gateway. Easy Digital Shop is easy to used and easy to integration.
- * Version:           1.0.2
+ * Version:           1.0.3
  * Author:            phpwebcreators
  * Author URI:        http://webs-spider.com/
  * License:           GNU General Public License v3.0
