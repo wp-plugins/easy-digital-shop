@@ -3,7 +3,7 @@ Contributors: mbjtechnolabs
 Tags: download, e-commerce, ebook, ecommerce, file, mp3, music, paypal, pdf, shop, software, commerce, digital downloads, download, downloads, e-commerce, e-downloads, e-store, ecommerce, eshop, orders, paypal, paypal ipn, sell digital products, sell download, sell downloads, sell ebook, sell photos, sell products, sell videos, selling, wp ecommerce, button, donate, email, mailchimp, marketing, multi currency, newsletter, payment, payment history, payment list, payment wp, paypal, paypal button manager, PayPal Donate, PayPal payment, paypal payment accept, paypal payment button, paypal payment buttons, Paypal payment list, paypal payment widget, plugin, shortcode, sidebar, signup, subscribe, widget
 Requires at least: 3.8
 Tested up to: 4.1
-Stable tag: 1.0.2
+Stable tag: trunk
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
