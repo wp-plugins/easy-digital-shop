@@ -552,6 +552,21 @@ class Easy_Digital_Shop_Admin {
                     </tr>
 
                     <tr valign="top">
+                        <th scope="row">
+                            <label for="eds_sender_name">"From" Name</label>
+                        </th>
+                        <td>
+                            <input name="eds_sender_name" id="eds_sender_name" type="text" value="<?php echo get_option('eds_sender_name'); ?>"></td>
+                    </tr>
+                    <tr valign="top">
+                        <th scope="row">
+                            <label for="eds_sender_email">"From" Email Address</label>
+                        </th>
+                        <td>
+                            <input name="eds_sender_email" id="eds_sender_email" type="text" value="<?php echo get_option('eds_sender_email'); ?>"></td>
+                    </tr>
+
+                    <tr valign="top">
                         <th scope="row">Use Paypal Sandbox</th>
                         <td>
                             <?php

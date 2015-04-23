@@ -57,9 +57,22 @@ if (substr($sitename, 0, 4) == 'www.') {
     $sitename = substr($sitename, 4);
 }
 
-if (substr($sender_address, strpos($sender_address, '@') + 1) != $sitename) {
+$eds_sender_email = get_option('eds_sender_email');
+if( isset($eds_sender_email) && !empty($eds_sender_email) ) {
+    $sender_address = $eds_sender_email;
+} elseif (substr($sender_address, strpos($sender_address, '@') + 1) != $sitename) {
     $sender_address = "shop@" . $sitename;
 }
+
+$eds_sender_name = get_option('eds_sender_name');
+
+if( isset($eds_sender_name) && !empty($eds_sender_name) ) {
+    $mail_From = "From: ".$eds_sender_name." <" . $sender_address . ">";
+} else {
+    $mail_From = "From: Shop <" . $sender_address . ">";
+}
+
+
 
 if ($fp) {
 
@@ -106,7 +119,6 @@ if ($fp) {
 
                 $blogname = get_option('blogname');
                 $downloadlink = get_option('eds_shortlink') ? get_option('siteurl') . "/eds/" . $hash : WP_PLUGIN_URL . "/easy-digital-shop/download.php?h=" . $hash;
-                $mail_From = "From: Shop <" . $sender_address . ">";
                 $mail_Subject = get_option('eds_emailsubject');
                 $search = array('$first_name',
                     '$last_name',
@@ -125,7 +137,6 @@ if ($fp) {
             }
         } elseif (strcmp($res, "INVALID") == 0) {
 
-            $mail_From = "From: Shop <" . $sender_address . ">";
             $mail_Subject = "INVALID IPN";
             $mail_Body = "Something went wrong:\n";
             foreach ($_POST as $key => $value) {

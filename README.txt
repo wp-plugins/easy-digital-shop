@@ -76,6 +76,8 @@ In the search field type "Easy Digital Shop" and click Search Plugins. Once you'
 *   We have a serious problem. Maybe your WordPress installation is not reachable from outside because you are in a testing environment? Around the "Buy Now!"-button you'll find a hidden field named notify-url. The url (ends with... ipn.php) in the value attribute has to be available for PayPal. If you open it in your browser, you should see an empty white page without any error message.
 
 == Changelog ==
+= 1.0.6 =
+*       Add "From" Name and "From" Email Address in setting panel ( request from Matteo: https://wordpress.org/support/topic/customize-mail-sender-name-and-mail-address)
 = 1.0.4 =
 *       Display paypal button in post listing
 = 1.0.3 =
