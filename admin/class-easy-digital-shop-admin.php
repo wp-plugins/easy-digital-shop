@@ -260,6 +260,8 @@ class Easy_Digital_Shop_Admin {
         register_setting('eds-settings-group', 'eds_emailtext');
         register_setting('eds-settings-group', 'eds_shortlink');
         register_setting('eds-settings-group', 'eds_return_page');
+        register_setting('eds-settings-group', 'eds_sender_name');
+        register_setting('eds-settings-group', 'eds_sender_email');
     }
 
     public function eds_add_pages() {
