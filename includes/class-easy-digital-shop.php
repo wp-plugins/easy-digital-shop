@@ -49,7 +49,7 @@ class Easy_Digital_Shop {
     public function __construct() {
 
         $this->plugin_name = 'easy-digital-shop';
-        $this->version = '1.0.7';
+        $this->version = '1.2.0';
 
         $this->load_dependencies();
         $this->set_locale();
